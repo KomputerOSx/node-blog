@@ -1,0 +1,74 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <title>My Library</title>
+</head>
+<body>
+<h1 class="title is-1">My Library</h1>
+
+
+
+<div id="alert"></div>
+
+<form id="bookForm" class="container">
+  <div class="field">
+    <label class="label" for="title">Title</label>
+    <div class="control">
+      <input type="text" id="title" name="title" class="input" placeholder="Title" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="author">Author</label>
+    <div class="control">
+      <input type="text" id="author" name="author" class="input" placeholder="Author" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="year">Year</label>
+    <div class="control">
+      <input type="number" id="year" name="year" class="input" placeholder="Year" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="pages">Pages</label>
+    <div class="control">
+      <input type="number" id="pages" name="pages" class="input" placeholder="Pages" required>
+    </div>
+  </div>
+
+  <div class="control">
+    <button type="submit" class="button is-primary">Submit</button>
+  </div>
+</form>
+
+<ul id="bookList" class="container">
+
+  <!-- Books will be dynamically added here -->
+</ul>
+
+
+<script type="module" src='../js/client.js'></script>
+
+
+
+<!--<script>-->
+<!--  // fetch("/books")-->
+<!--  //         .then(response => response.json())-->
+<!--  //         .then(data => {-->
+<!--  //           console.log(data);-->
+<!--  //         });-->
+
+
+<!--</script>-->
+</body>
+</html>

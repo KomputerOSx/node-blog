@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    font-size: 48px; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold if desired */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+#bookList {
+    list-style-type: none;
+    padding: 0;
+}
+.book {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    padding: 20px; /* Adjust the value as needed */
+}
+.box {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+
+.container {
+    padding: 20px; /* Adjust the value as needed */
+}
+

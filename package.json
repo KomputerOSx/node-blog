@@ -1,0 +1,20 @@
+{
+  "name": "express_learning_2,0",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/js/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/js/server.js",
+    "dev": "npx nodemon --env-file=config/.env src/js/server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5",
+    "nodemon": "^3.1.7"
+  }
+}
