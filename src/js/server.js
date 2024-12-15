@@ -1,31 +1,25 @@
 import express from "express";
 import path from "path";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 import {getBooks, getBook, createBook, deleteBook, updateBook} from "./database.js";
 
+import indexRouter from "./routes/index.js";
+
 import cors from 'cors';
-
-
-// const express = require("express");
-// const path = require("path");
-// const { fileURLToPath } = require('url');
-// const { dirname } = require('path');
-//
-// const { getBooks, getBook, createBook, deleteBook, updateBook } = require('./database.js');
-//
-
 
 const app = express();
 const port = 3000;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
+
+
+app.set("view engine", "ejs");
+app.set("views", path.join("src", "views"));
+
+app.use('/', indexRouter);
+
 
 app.use(express.static('src'));
-app.use(express.static('public'));
-
 
 app.use(express.json());
 app.use(cors());
@@ -34,32 +28,6 @@ app.use(cors());
 app.use((err, req, res, next) => {
     console.error(err.stack)
     res.status(500).send('Something broke!')
-})
-
-
-//setup static folder
-
-// app.use(express.static(path.join(__dirname)));
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/src/html/index.html');
-// });
-
-
-app.use(express.static('src/html', {
-    extensions: ['html', 'htm']
-}));
-
-app.get("/", (req, res) => {
-    res.sendfile("src/html/index.html");
-})
-
-app.get("/contact_us", (req, res) => {
-    res.sendfile("src/html/contact_us");
-})
-
-
-app.get("/about", (req, res) => {
-    res.sendfile("src/html/about");
 })
 
 
@@ -93,19 +61,6 @@ app.post("/books", async (req, res) => {
     res.send(book);
 });
 
-
-// app.put("/books/:id", async (req, res) => {
-//     try {
-//         const id = req.params.id;
-//         const { field, value } = req.body;
-//         await updateBook(id, field, value);
-//         console.log("Book Updated");
-//         res.status(200).send({ message: "Book updated successfully" });
-//     } catch (error) {
-//         console.error("Error updating book:", error);
-//         res.status(500).send({ message: "Error updating book" });
-//     }
-// });
 
 
 app.put('/api/books/:id', async (req, res) => {
